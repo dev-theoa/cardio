@@ -3,6 +3,7 @@ name: Zu GitHub Pages deployen
 on:
   push:
     branches:
+      - dev # nur für Testzwecke; workflow wird auch im branch 'dev' gestartet
       - main # Ändern Sie dies zu 'master', falls Ihr Haupt-Branch so heißt
 
 # Berechtigungen, die GitHub Pages zwingend für das Deployment benötigt
