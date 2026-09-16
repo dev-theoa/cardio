@@ -1,3 +1,6 @@
+# Willkommen in dieser README!
+Hier ist die alte README von Claude :)
+
 # Vokabel-Trainer – npm-freie Version (Schritt 1)
 
 Gleiche Funktionalität wie die Vite-Variante, aber ganz ohne npm, ohne
