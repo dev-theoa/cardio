@@ -1,0 +1,519 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: #f5f5f7;
+  color: #1a1a1a;
+}
+
+input, button {
+  font: inherit;
+}
+
+.hint {
+  font-size: 0.9rem;
+  text-align: center;
+  color: #666;
+  margin: 0;
+}
+
+.error {
+  background: #fdecea;
+  color: #b3261e;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.primary-link {
+  background: #1a1a1a;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem 0.9rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  display: inline-block;
+}
+
+/* Grundlayout für alle "Seiten mit zentrierter Karte" */
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+/* --- Login / Registrierung --- */
+
+.auth-form {
+  width: 100%;
+  max-width: 360px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.auth-form h1 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.5rem;
+}
+
+.auth-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.auth-form input {
+  padding: 0.6rem 0.75rem;
+  border: 1px solid #d0d0d5;
+  border-radius: 8px;
+}
+
+.auth-form button {
+  padding: 0.7rem;
+  border: none;
+  border-radius: 8px;
+  background: #1a1a1a;
+  color: #fff;
+  cursor: pointer;
+}
+
+.auth-form button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+/* --- Übersicht (HomePage) --- */
+
+.home {
+  width: 100%;
+  max-width: 480px;
+}
+
+.home-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.home-header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.home-header-actions {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.secondary-link {
+  color: #444;
+  text-decoration: none;
+  font-size: 0.9rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #d0d0d5;
+  border-radius: 8px;
+}
+
+.stack-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.stack-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  color: #1a1a1a;
+}
+
+.stack-title {
+  font-weight: 600;
+}
+
+.stack-count {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+/* --- Stapel-Formular (Vokabeln hinzufügen / Review) --- */
+
+.stack-form {
+  width: 100%;
+  max-width: 480px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.stack-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.stack-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.stack-form input {
+  padding: 0.6rem 0.75rem;
+  border: 1px solid #d0d0d5;
+  border-radius: 8px;
+}
+
+.stack-form button[type='submit'] {
+  border: none;
+  border-radius: 8px;
+  background: #1a1a1a;
+  color: #fff;
+  padding: 0.7rem;
+  cursor: pointer;
+}
+
+.stack-form button[type='submit']:disabled {
+  opacity: 0.6;
+}
+
+.cards-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.card-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto auto;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.card-row input {
+  min-width: 0;
+}
+
+.swap-btn {
+  border: none;
+  background: #eef0ff;
+  border-radius: 8px;
+  padding: 0.5rem 0.7rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.remove-btn {
+  border: none;
+  background: #f0f0f2;
+  border-radius: 8px;
+  padding: 0.5rem 0.7rem;
+  cursor: pointer;
+}
+
+.secondary-btn {
+  border: 1px dashed #999;
+  background: transparent;
+  border-radius: 8px;
+  padding: 0.6rem;
+  cursor: pointer;
+}
+
+.scan-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  text-align: center;
+}
+
+.scan-label {
+  display: inline-block;
+  padding: 0.8rem 1.2rem;
+  border: 2px dashed #999;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.divider {
+  text-align: center;
+  color: #999;
+  font-size: 0.85rem;
+  margin: 0.5rem 0;
+}
+
+/* --- Lernansicht --- */
+
+.learn-card {
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  text-align: center;
+}
+
+.learn-progress {
+  color: #666;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.flashcard {
+  width: 100%;
+  min-height: 220px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 2rem 1.5rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.flashcard-label {
+  margin: 0;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #999;
+}
+
+.flashcard-text {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.flashcard-hint {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #999;
+}
+
+.answer-buttons {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+}
+
+.answer-buttons button {
+  flex: 1;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.correct-btn {
+  background: #2e7d32;
+  color: #fff;
+}
+
+.wrong-btn {
+  background: #b3261e;
+  color: #fff;
+}
+
+/* --- Profil --- */
+
+.profile-card {
+  width: 100%;
+  max-width: 400px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.profile-email {
+  color: #666;
+  margin: -0.5rem 0 0 0;
+}
+
+.danger-link {
+  background: none;
+  border: none;
+  color: #b3261e;
+  text-align: left;
+  padding: 0;
+  cursor: pointer;
+  font-size: 0.9rem;
+  text-decoration: underline;
+}
+
+.confirm-box {
+  background: #fdecea;
+  border-radius: 8px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.confirm-box p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.confirm-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.confirm-buttons button {
+  flex: 1;
+}
+
+/* --- Foto-Zuschneiden für OCR-Spaltenerkennung --- */
+
+.cropper-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  z-index: 100;
+}
+
+.cropper-panel {
+  width: 100%;
+  max-width: 560px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.cropper-panel h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.cropper-image-container {
+  position: relative;
+  width: 100%;
+  user-select: none;
+  touch-action: none;
+}
+
+.cropper-image {
+  width: 100%;
+  display: block;
+  border-radius: 6px;
+}
+
+.crop-box {
+  position: absolute;
+  border: 2px solid;
+  border-radius: 4px;
+  cursor: move;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.crop-box-front {
+  border-color: #2e7d32;
+  background: rgba(46, 125, 50, 0.15);
+}
+
+.crop-box-back {
+  border-color: #1565c0;
+  background: rgba(21, 101, 192, 0.15);
+}
+
+.crop-box-label {
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  font-size: 0.7rem;
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+  margin: 0.25rem;
+  pointer-events: none;
+}
+
+.crop-box-handle {
+  position: absolute;
+  right: -8px;
+  bottom: -8px;
+  width: 18px;
+  height: 18px;
+  background: #fff;
+  border: 2px solid #333;
+  border-radius: 50%;
+  cursor: nwse-resize;
+}
+
+.cropper-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.cropper-actions button {
+  flex: 1;
+}
+
+.primary-btn {
+  border: none;
+  border-radius: 8px;
+  background: #1a1a1a;
+  color: #fff;
+  padding: 0.7rem;
+  cursor: pointer;
+}
+
+.primary-btn:disabled {
+  opacity: 0.6;
+}
