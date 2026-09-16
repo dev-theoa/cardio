@@ -5,7 +5,7 @@ import { html } from '../lib/html.js'
 export function ProtectedRoute({ children }) {
   const { user, loading } = useAuth()
 
-  if (loading) return html`<p>Laden…</p>`
+  if (loading) return html`<p>Laden… Dies kann einen Moment dauern.</p>`
   if (!user) {
     window.location.hash = '#/login'
     return null
